@@ -1,0 +1,27 @@
+﻿<Window x:Class="Warehouse.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Warehouse"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        
+        Title="Warehouse" Height="300" Width="450" WindowStyle="ThreeDBorderWindow">
+    <Grid Background="Khaki">
+        <Border MinWidth="400" Margin="15" Background="white" VerticalAlignment="Center" Padding="30" MaxWidth="550" CornerRadius="10">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="60" Color="LightGray" ShadowDepth="0"/>
+            </Border.Effect>
+            <StackPanel>
+                <TextBlock Text="Warehouse" FontSize="30" FontWeight="Bold" Margin="0 0 0 20" />
+                <TextBlock Text="Выберите вариант что бы продолжить" FontSize="12" Margin="0 0 0 20" />
+
+                <Grid Margin="0 0 0 20">
+                    <Button HorizontalAlignment="Left" Content="Регистрация" Background="#FFC500" BorderBrush="#FFC500" Click="Button_Window_Reg_Click" Cursor="Hand"/>
+                    <Button HorizontalAlignment="Right" Content="Войти" Click="Button_Window_Auth_Click"  Style="{StaticResource MaterialDesignFlatButton}" Foreground="#FFC500" Cursor="Hand"/>
+                </Grid>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>
