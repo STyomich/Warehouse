@@ -88,6 +88,9 @@
       <DependentUpon>RegWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="User.cs" />
+    <Compile Include="WorkspaceWindow.xaml.cs">
+      <DependentUpon>WorkspaceWindow.xaml</DependentUpon>
+    </Compile>
     <Page Include="AuthWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -105,6 +108,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="RegWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WorkspaceWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -55,6 +55,10 @@ namespace Warehouse
                     MessageBox.Show("Done");
                     //UserPageWindow userPageWindow = new UserPageWindow();
                     //userPageWindow.Show();
+                    WorkspaceWindow workspaceWindow = new WorkspaceWindow();
+                    workspaceWindow.Show();
+                    MainWindow mainWindow = new MainWindow();
+                    mainWindow.Hide();
                     Hide();
                 }
                 else
@@ -62,11 +66,5 @@ namespace Warehouse
             }
         }
 
-        private void Button_Reg_Click(object sender, RoutedEventArgs e)
-        {
-            MainWindow mainWindow = new MainWindow();
-            mainWindow.Show();
-            Hide();
-        }
     }
 }
