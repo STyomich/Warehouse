@@ -1,0 +1,27 @@
+﻿<Window x:Class="Warehouse.AddCategoryWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Warehouse"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        
+        Title="Warehouse" Height="550" Width="450" WindowStyle="ThreeDBorderWindow">
+    <Grid Background="Khaki">
+        <Border MinWidth="400" Margin="15" Background="white" VerticalAlignment="Center" Padding="30" MaxWidth="550" CornerRadius="10">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="60" Color="LightGray" ShadowDepth="0"/>
+            </Border.Effect>
+            <StackPanel>
+                <TextBlock Text="Добавить товар" FontSize="30" FontWeight="Bold" Margin="0 0 0 20" />
+                <TextBlock Text="Введите данные" FontSize="12" Margin="0 0 0 20" />
+
+                <TextBox x:Name="textBoxName" materialDesign:HintAssist.Hint="Введите название" SelectionBrush="#FFC500" CaretBrush="#FFC500" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Cursor="Arrow"/>
+                <TextBox x:Name="textBoxUnit" materialDesign:HintAssist.Hint="Единица измерения" SelectionBrush="#FFC500" CaretBrush="#FFC500" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Cursor="Arrow"/>
+                <TextBox x:Name="textBoxPrice" materialDesign:HintAssist.Hint="Цена за единицу" SelectionBrush="#FFC500" CaretBrush="#FFC500" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Cursor="Arrow"/>
+                <Button Content="Добавить товар" Click="Button_AddProduct" Margin="0 20" Background="#FFC500" BorderBrush="#FFC500" Cursor="Hand"/>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>

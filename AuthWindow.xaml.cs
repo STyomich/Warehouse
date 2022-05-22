@@ -24,7 +24,7 @@ namespace Warehouse
             InitializeComponent();
         }
 
-        private void Button_Auth_Click(object sender, RoutedEventArgs e)
+        public void Button_Auth_Click(object sender, RoutedEventArgs e)
         {
             string login = textBoxLogin.Text;
             string pass = passBox.Password;
@@ -55,16 +55,22 @@ namespace Warehouse
                     MessageBox.Show("Done");
                     //UserPageWindow userPageWindow = new UserPageWindow();
                     //userPageWindow.Show();
+                    MainWindow mainWindow = new MainWindow();
+                    mainWindow.Close();
                     WorkspaceWindow workspaceWindow = new WorkspaceWindow();
                     workspaceWindow.Show();
-                    MainWindow mainWindow = new MainWindow();
-                    mainWindow.Hide();
-                    Hide();
+                    Close();
                 }
                 else
                     MessageBox.Show("Ошибка! Введены неверные данные.");
             }
         }
 
+        private void Button_Return(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+            Close();
+        }
     }
 }

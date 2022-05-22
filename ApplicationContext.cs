@@ -11,6 +11,8 @@ namespace Warehouse
     {
         public DbSet<User> Users { get; set; }
 
+        public DbSet<Product> Products { get; set; }
+
         public ApplicationContext() : base("DefaultConnection") { }
     }
 }

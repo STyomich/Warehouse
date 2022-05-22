@@ -79,12 +79,14 @@ namespace Warehouse
         {
             AuthWindow authWindow = new AuthWindow();
             authWindow.Show();
+            Close();
         }
 
         private void Button_Window_Reg_Click(object sender, RoutedEventArgs e)
         {
             RegWindow regWindow = new RegWindow();
             regWindow.Show();
+            Close();
         }
     }
 }

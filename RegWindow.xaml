@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         
-        Title="Warehouse" Height="450" Width="450" WindowStyle="ThreeDBorderWindow">
+        Title="Warehouse" Height="550" Width="450" WindowStyle="ThreeDBorderWindow">
     <Grid Background="Khaki">
         <Border MinWidth="400" Margin="15" Background="white" VerticalAlignment="Center" Padding="30" MaxWidth="550" CornerRadius="10">
             <Border.Effect>
@@ -22,6 +22,7 @@
                 <PasswordBox x:Name="passBox2" materialDesign:HintAssist.Hint="Повторите пароль" SelectionBrush="#FFC500" CaretBrush="#FFC500" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"/>
                 <TextBox x:Name="textBoxEmail" materialDesign:HintAssist.Hint="E-mail" SelectionBrush="#FFC500" CaretBrush="#FFC500" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
                 <Button Content="Зарегистрироваться" Margin="0 20" Background="#FFC500" BorderBrush="#FFC500" Click="Button_Reg_Click" Cursor="Hand"/>
+                <Button HorizontalAlignment="Center" Content="Вернуться" Click="Button_Return" Style="{StaticResource MaterialDesignFlatButton}" Foreground="#FFC500" Cursor="Hand" Width="360"/>
             </StackPanel>
         </Border>
     </Grid>

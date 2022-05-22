@@ -19,9 +19,30 @@ namespace Warehouse
     /// </summary>
     public partial class WorkspaceWindow : Window
     {
+
+
         public WorkspaceWindow()
         {
             InitializeComponent();
+            ApplicationContext db = new ApplicationContext();
+            List<Product> products = db.Products.ToList();
+            dataGrid.ItemsSource = products;
+            //List<User> users = db.Users.ToList();
+            //dataGrid.ItemsSource = users;
+
+        }
+
+        private void Button_Profile(object sender, RoutedEventArgs e)
+        {
+            ProfileWindow profileWindow = new ProfileWindow();
+            profileWindow.Show();
+        }
+
+        private void Button_AddCategory(object sender, RoutedEventArgs e)
+        {
+            AddCategoryWindow addCategoryWindow = new AddCategoryWindow();
+            addCategoryWindow.Show();
+            Close();
         }
     }
 }

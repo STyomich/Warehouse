@@ -72,8 +72,15 @@ namespace Warehouse
 
                 AuthWindow authWindow = new AuthWindow();
                 authWindow.Show();
-                this.Hide();
+                this.Close();
             }
+        }
+
+        private void Button_Return(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+            Close();
         }
     }
 }
