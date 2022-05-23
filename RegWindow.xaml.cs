@@ -35,44 +35,58 @@ namespace Warehouse
             string pass2 = passBox2.Password;
             string email = textBoxEmail.Text.Trim().ToLower();
 
-            if (login.Length < 5)
+            User regUser = null;
+            using (ApplicationContext db = new ApplicationContext())
             {
-                textBoxLogin.ToolTip = "Это поле введено не коректно!";
+                regUser = db.Users.Where(b => b.Login == login).FirstOrDefault();
+            }
+            if (regUser != null)
+            {
+                textBoxLogin.ToolTip = "Данный логин занят.";
                 textBoxLogin.Background = Brushes.DarkRed;
-            }
-            else if (pass.Length < 5)
-            {
-                passBox.ToolTip = "Это поле введено не коректно!";
-                passBox.Background = Brushes.DarkRed;
-            }
-            else if (pass2 != pass)
-            {
-                passBox2.ToolTip = "Это поле введено не коректно!";
-                passBox2.Background = Brushes.DarkRed;
-            }
-            else if (email.Length < 5 || !email.Contains("@") || !email.Contains("."))
-            {
-                textBoxEmail.ToolTip = "Это поле введено не коректно!";
-                textBoxEmail.Background = Brushes.DarkRed;
+                MessageBox.Show("Данный логин занят.");
             }
             else
             {
-                textBoxLogin.ToolTip = "";
-                textBoxLogin.Background = Brushes.Transparent;
-                passBox.ToolTip = "";
-                passBox.Background = Brushes.Transparent;
-                passBox2.ToolTip = "";
-                passBox2.Background = Brushes.Transparent;
-                textBoxEmail.ToolTip = "";
-                textBoxEmail.Background = Brushes.Transparent;
+                if (login.Length < 5)
+                {
+                    textBoxLogin.ToolTip = "Это поле введено не коректно!";
+                    textBoxLogin.Background = Brushes.DarkRed;
+                }
+                else if (pass.Length < 5)
+                {
+                    passBox.ToolTip = "Это поле введено не коректно!";
+                    passBox.Background = Brushes.DarkRed;
+                }
+                else if (pass2 != pass)
+                {
+                    passBox2.ToolTip = "Это поле введено не коректно!";
+                    passBox2.Background = Brushes.DarkRed;
+                }
+                else if (email.Length < 5 || !email.Contains("@") || !email.Contains("."))
+                {
+                    textBoxEmail.ToolTip = "Это поле введено не коректно!";
+                    textBoxEmail.Background = Brushes.DarkRed;
+                }
+                else
+                {
+                    textBoxLogin.ToolTip = "";
+                    textBoxLogin.Background = Brushes.Transparent;
+                    passBox.ToolTip = "";
+                    passBox.Background = Brushes.Transparent;
+                    passBox2.ToolTip = "";
+                    passBox2.Background = Brushes.Transparent;
+                    textBoxEmail.ToolTip = "";
+                    textBoxEmail.Background = Brushes.Transparent;
 
-                User user = new User(login, email, pass);
-                db.Users.Add(user);
-                db.SaveChanges();
+                    User user = new User(login, email, pass);
+                    db.Users.Add(user);
+                    db.SaveChanges();
 
-                AuthWindow authWindow = new AuthWindow();
-                authWindow.Show();
-                this.Close();
+                    AuthWindow authWindow = new AuthWindow();
+                    authWindow.Show();
+                    this.Close();
+                }
             }
         }
 

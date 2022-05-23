@@ -14,7 +14,7 @@ xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
             </Border.Effect>
             <StackPanel>
                 <TextBlock Text="Профиль" FontSize="30" FontWeight="Bold" Margin="0 0 0 20" />
-                <TextBlock FontSize="12" Margin="0 0 0 20" />
+                <TextBlock x:Name="profileLogin" FontSize="12" Margin="0 0 0 20" />
 
             </StackPanel>
         </Border>

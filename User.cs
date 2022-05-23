@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Warehouse
 {
-class User
+    class User
     {
         public int id { get; set; }
 

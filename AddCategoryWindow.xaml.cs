@@ -34,6 +34,18 @@ namespace Warehouse
             string name = textBoxName.Text;
             string unit = textBoxUnit.Text;
             int price = Convert.ToInt32(textBoxPrice.Text);
+            Product newProduct = null;
+            using (ApplicationContext db = new ApplicationContext())
+            {
+                newProduct = db.Products.Where(b => b.Name == name).FirstOrDefault();
+            }
+            if (newProduct != null)
+            {
+                textBoxName.ToolTip = "Данный товар уже существует.";
+                textBoxName.Background = Brushes.DarkRed;
+                MessageBox.Show("Данный товар уже существует.");
+            }
+            else
             if (name.Length < 1)
             {
                 textBoxName.ToolTip = "Это поле введено не коректно!";

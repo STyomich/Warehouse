@@ -59,7 +59,6 @@ namespace Warehouse
                     mainWindow.Close();
                     WorkspaceWindow workspaceWindow = new WorkspaceWindow();
                     workspaceWindow.Show();
-                    Close();
                 }
                 else
                     MessageBox.Show("Ошибка! Введены неверные данные.");
