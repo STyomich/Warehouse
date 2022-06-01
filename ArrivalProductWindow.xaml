@@ -1,0 +1,41 @@
+﻿<Window x:Class="Warehouse.ArrivalProductWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Warehouse"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="ArrivalAndShipment" Height="480" Width="725">
+    <Grid Background="Khaki" Cursor="Hand">
+        <Border MinWidth="200" Margin="15,0,10,0" Background="white" HorizontalAlignment="Left" VerticalAlignment="Center" Padding="30" MaxWidth="550" CornerRadius="10" Height="401">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="60" Color="LightGray" ShadowDepth="0"/>
+            </Border.Effect>
+            <StackPanel Margin="0,0,15,0">
+                <TextBlock Text="Прибытие и отправка" FontSize="30" FontWeight="Bold" Margin="0 0 0 20" />
+
+                <TextBlock Text="Выберите вариант и введите данные" FontSize="12" Margin="0 0 0 10" />
+                <RadioButton x:Name="radioButtonArrival" GroupName="choices" Content="Прибытие" Height="26" Width="94" HorizontalAlignment="Left"/>
+                <RadioButton x:Name="radioButtonShipment" GroupName="choices" Content="Отправка" Height="26" Width="94" HorizontalAlignment="Left"/>
+                <TextBlock Text="Название товара" />
+                <TextBox x:Name="textBoxSearchProduct" materialDesign:HintAssist.Hint="Поиск товара" SelectionBrush="#FFC500" CaretBrush="#FFC500" HorizontalAlignment="Left" Height="22" Width="288"/>
+                <TextBlock Text="Количество прибывшего или отправленного товара:" />
+                <TextBox x:Name="textBoxAmount" PreviewTextInput="textBoxAmount_PreviewTextInput" materialDesign:HintAssist.Hint="Количество" SelectionBrush="#FFC500" CaretBrush="#FFC500" HorizontalAlignment="Left" Width="86" Height="22"/>
+                <Button Content="Вернуться"  Click="Button_ReturnOnWorkspaceWindow" Margin="10 10 0 0" Style="{StaticResource MaterialDesignFlatButton}" Foreground="#FFC500" Cursor="Hand" HorizontalAlignment="Left" Width="210"/>
+
+                <Button Content="Добавить"  Click="Button_AddInList" Margin="10 10 0 0" Style="{StaticResource MaterialDesignFlatButton}" Foreground="#FFC500" Cursor="Hand" HorizontalAlignment="Left" Width="210"/>
+                <Button Content="Сформировать накладную" Click="Button_generateList" Margin="10" Background="#FFC500" BorderBrush="#FFC500"  HorizontalAlignment="Left" Width="210" Cursor="Hand"/>
+            </StackPanel>
+        </Border>
+        <StackPanel Margin="420,0,0,0">
+            <TextBlock Text="Список" FontSize="40" FontWeight="Bold" Margin="20 45 40 20" FontFamily="Segoe UI"/>
+            <DataGrid x:Name="dataGrid" AutoGenerateColumns="False" Width="280" Height="280">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Название" Binding="{Binding Path=Name}"/>
+                    <DataGridTextColumn Header="Кол-во" Binding="{Binding Path=Amount}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+    </Grid>
+</Window>

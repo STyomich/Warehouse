@@ -50,22 +50,22 @@ namespace Warehouse
             {
                 if (login.Length < 5)
                 {
-                    textBoxLogin.ToolTip = "Это поле введено не коректно!";
+                    textBoxLogin.ToolTip = "Логин должен быть длиннее 4 символов!";
                     textBoxLogin.Background = Brushes.DarkRed;
                 }
                 else if (pass.Length < 5)
                 {
-                    passBox.ToolTip = "Это поле введено не коректно!";
+                    passBox.ToolTip = "Пароль должен быть длиннее 4 символов!";
                     passBox.Background = Brushes.DarkRed;
                 }
                 else if (pass2 != pass)
                 {
-                    passBox2.ToolTip = "Это поле введено не коректно!";
+                    passBox2.ToolTip = "Пароли не совпадают!";
                     passBox2.Background = Brushes.DarkRed;
                 }
-                else if (email.Length < 5 || !email.Contains("@") || !email.Contains("."))
+                else if (email.Length < 8 || !email.Contains("@") || !email.Contains("."))
                 {
-                    textBoxEmail.ToolTip = "Это поле введено не коректно!";
+                    textBoxEmail.ToolTip = "Это поле введено не коректно! Логин длиннее 7 символов, наличие @ и . ";
                     textBoxEmail.Background = Brushes.DarkRed;
                 }
                 else

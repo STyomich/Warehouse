@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -37,7 +38,7 @@ namespace Warehouse
             Product newProduct = null;
             using (ApplicationContext db = new ApplicationContext())
             {
-                newProduct = db.Products.Where(b => b.Name == name).FirstOrDefault();
+                newProduct = db.Products.Where(b => b.Name.ToLower() == name.ToLower()).FirstOrDefault();
             }
             if (newProduct != null)
             {
@@ -67,7 +68,7 @@ namespace Warehouse
                 textBoxPrice.Background = Brushes.Transparent;
                 textBoxUnit.ToolTip = "";
                 textBoxUnit.Background = Brushes.Transparent;
-                string date_of_last_delivery = "";
+                string date_of_last_delivery = "X";
                 int amount = 0;
                 Product product = new Product(name, unit, price, date_of_last_delivery, amount);
                 db.Products.Add(product);
@@ -78,6 +79,19 @@ namespace Warehouse
 
 
             }
+        }
+
+        private void textBoxPrice_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            Regex regex = new Regex("[^0-9]+");
+            e.Handled = regex.IsMatch(e.Text);
+        }
+
+        private void Button_ReturnToWorkspaceWindow(object sender, RoutedEventArgs e)
+        {
+            WorkspaceWindow workspaceWindow = new WorkspaceWindow();
+            workspaceWindow.Show();
+            Close();
         }
     }
 }

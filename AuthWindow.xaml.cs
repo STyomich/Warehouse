@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -59,6 +60,11 @@ namespace Warehouse
                     mainWindow.Close();
                     WorkspaceWindow workspaceWindow = new WorkspaceWindow();
                     workspaceWindow.Show();
+                    File.WriteAllText("user.txt", "");
+                    File.AppendAllText("user.txt", authUser.Login);
+                    File.AppendAllText("user.txt", "\n"+authUser.Password);
+                    File.AppendAllText("user.txt", "\n"+authUser.Email);
+                    Close();
                 }
                 else
                     MessageBox.Show("Ошибка! Введены неверные данные.");

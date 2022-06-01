@@ -27,8 +27,6 @@ namespace Warehouse
             ApplicationContext db = new ApplicationContext();
             List<Product> products = db.Products.ToList();
             dataGrid.ItemsSource = products;
-            //List<User> users = db.Users.ToList();
-            //dataGrid.ItemsSource = users;
 
         }
 
@@ -42,6 +40,20 @@ namespace Warehouse
         {
             AddCategoryWindow addCategoryWindow = new AddCategoryWindow();
             addCategoryWindow.Show();
+            Close();
+        }
+
+        private void Button_ArrivalProduct(object sender, RoutedEventArgs e)
+        {
+            ArrivalProductWindow arrivalProductWindow = new ArrivalProductWindow();
+            arrivalProductWindow.Show();
+            Close();
+        }
+
+        private void Button_Exit(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
             Close();
         }
     }

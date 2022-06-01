@@ -6,7 +6,7 @@ xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:local="clr-namespace:Warehouse"
         mc:Ignorable="d"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        Title="AuthWindow" Height="360" Width="450">
+        Title="Profile" Height="360" Width="450">
     <Grid Background="Khaki" Cursor="Hand">
         <Border MinWidth="400" Margin="15" Background="white" VerticalAlignment="Center" Padding="30" MaxWidth="550" CornerRadius="10">
             <Border.Effect>
@@ -14,7 +14,12 @@ xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
             </Border.Effect>
             <StackPanel>
                 <TextBlock Text="Профиль" FontSize="30" FontWeight="Bold" Margin="0 0 0 20" />
-                <TextBlock x:Name="profileLogin" FontSize="12" Margin="0 0 0 20" />
+                <TextBlock Text="Логин:" FontSize="12"/>
+                <TextBlock x:Name="profileLogin" Text="" FontSize="12" Margin="0 10 0 10" />
+                <TextBlock Text="Пароль:" FontSize="12"/>
+                <TextBlock x:Name="profilePass" Text="" FontSize="12" Margin="0 10 0 10"/>
+                <TextBlock Text="Почта:" FontSize="12"/>
+                <TextBlock x:Name="profileEmail" Text="" FontSize="12" Margin="0 10 0 10"/>
 
             </StackPanel>
         </Border>

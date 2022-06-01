@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,10 +21,11 @@ namespace Warehouse
     {
         public ProfileWindow()
         {
-
+            string[] userData = File.ReadAllLines("user.txt");
             InitializeComponent();
-
-            ApplicationContext db = new ApplicationContext();
+            profileLogin.Text = userData[0];
+            profilePass.Text = userData[1];
+            profileEmail.Text = userData[2];
         }
     }
 }

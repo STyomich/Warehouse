@@ -17,12 +17,22 @@
                 <TextBlock Text="Warehouse" FontSize="40" FontWeight="Bold" Margin="0 0 0 20" />
                 <Button HorizontalAlignment="Center" Click="Button_Profile" HorizontalContentAlignment="Left" Content="Профиль" Style="{StaticResource MaterialDesignFlatButton}" Foreground="#FFC500" Cursor="Hand" Width="211"/>
                 <Button HorizontalAlignment="Center" Click="Button_AddCategory" HorizontalContentAlignment="Left" Content="Добавить категорию" Style="{StaticResource MaterialDesignFlatButton}" Foreground="#FFC500" Cursor="Hand" Width="211"/>
-                <Button HorizontalAlignment="Center" HorizontalContentAlignment="Left" Content="Выйти" Style="{StaticResource MaterialDesignFlatButton}" Foreground="#FFC500" Cursor="Hand" Width="211"/>
+                <Button HorizontalAlignment="Center" Click="Button_ArrivalProduct" HorizontalContentAlignment="Left" Content="Прибытие/отправка" Style="{StaticResource MaterialDesignFlatButton}" Foreground="#FFC500" Cursor="Hand" Width="211"/>
+                <Button HorizontalAlignment="Center" Click="Button_Exit" HorizontalContentAlignment="Left" Content="Выйти" Style="{StaticResource MaterialDesignFlatButton}" Foreground="#FFC500" Cursor="Hand" Width="211"/>
             </StackPanel>
         </Border>
         <StackPanel Margin="320,0,0,0">
             <TextBlock Text="Товары" FontSize="40" FontWeight="Bold" Margin="40" FontFamily="Segoe UI"/>
-            <DataGrid x:Name="dataGrid" AutoGenerateColumns="True" Width="480" Height="341" />
+            <DataGrid x:Name="dataGrid" AutoGenerateColumns="False" Width="480" Height="341">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="№" Binding="{Binding Path=id}"/>
+                    <DataGridTextColumn Header="Название" Binding="{Binding Path=Name}"/>
+                    <DataGridTextColumn Header="Измерение" Binding="{Binding Path=Unit}"/>
+                    <DataGridTextColumn Header="Цена" Binding="{Binding Path=Price}"/>
+                    <DataGridTextColumn Header="Дата" Binding="{Binding Path=Date_of_last_delivery}"/>
+                    <DataGridTextColumn Header="Кол-во" Binding="{Binding Path=Amount}"/>
+                </DataGrid.Columns>
+            </DataGrid>
         </StackPanel>
     </Grid>
 </Window>
