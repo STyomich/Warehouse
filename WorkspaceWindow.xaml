@@ -17,12 +17,15 @@
                 <TextBlock Text="Warehouse" FontSize="40" FontWeight="Bold" Margin="0 0 0 20" />
                 <Button HorizontalAlignment="Center" Click="Button_Profile" HorizontalContentAlignment="Left" Content="Профиль" Style="{StaticResource MaterialDesignFlatButton}" Foreground="#FFC500" Cursor="Hand" Width="211"/>
                 <Button HorizontalAlignment="Center" Click="Button_AddCategory" HorizontalContentAlignment="Left" Content="Добавить категорию" Style="{StaticResource MaterialDesignFlatButton}" Foreground="#FFC500" Cursor="Hand" Width="211"/>
+                <Button HorizontalAlignment="Center" Click="Button_EditingProduct" HorizontalContentAlignment="Left" Content="Редактирование" Style="{StaticResource MaterialDesignFlatButton}" Foreground="#FFC500" Cursor="Hand" Width="211"/>
                 <Button HorizontalAlignment="Center" Click="Button_ArrivalProduct" HorizontalContentAlignment="Left" Content="Прибытие/отправка" Style="{StaticResource MaterialDesignFlatButton}" Foreground="#FFC500" Cursor="Hand" Width="211"/>
                 <Button HorizontalAlignment="Center" Click="Button_Exit" HorizontalContentAlignment="Left" Content="Выйти" Style="{StaticResource MaterialDesignFlatButton}" Foreground="#FFC500" Cursor="Hand" Width="211"/>
             </StackPanel>
         </Border>
         <StackPanel Margin="320,0,0,0">
             <TextBlock Text="Товары" FontSize="40" FontWeight="Bold" Margin="40" FontFamily="Segoe UI"/>
+            <TextBox x:Name="textBoxSearch" materialDesign:HintAssist.Hint="Поиск товара" SelectionBrush="#FFC500" Margin="30 0 0 10" CaretBrush="#FFC500" HorizontalAlignment="Left" Height="22" Width="278" Cursor="Arrow"/>
+            <Button HorizontalAlignment="Left" Content="Поиск" Background="#FFC500" BorderBrush="#FFC500" Margin="30 0 0 10" Click="Button_Search" Cursor="Hand"/>
             <DataGrid x:Name="dataGrid" AutoGenerateColumns="False" Width="480" Height="341">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="№" Binding="{Binding Path=id}"/>

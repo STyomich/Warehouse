@@ -1,4 +1,4 @@
-﻿<Window x:Class="Warehouse.ProfileWindow"
+﻿<Window x:Class="Warehouse.EditingProfileWindow"
 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -15,15 +15,18 @@ xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
             <StackPanel>
                 <TextBlock Text="Профиль" FontSize="30" FontWeight="Bold" Margin="0 0 0 20" />
                 <TextBlock Text="Логин:" FontSize="12"/>
-                <TextBlock x:Name="profileLogin" Text="" FontSize="12" Margin="0 10 0 10" />
+                <TextBox x:Name="textBoxNewLogin" materialDesign:HintAssist.Hint="Новый логин" SelectionBrush="#FFC500" CaretBrush="#FFC500" HorizontalAlignment="Left" Width="86" Height="22" Cursor="Arrow" />
                 <TextBlock Text="Пароль:" FontSize="12"/>
-                <TextBlock x:Name="profilePass" Text="" FontSize="12" Margin="0 10 0 10"/>
+                <TextBox x:Name="textBoxNewPass" materialDesign:HintAssist.Hint="Новый пароль" SelectionBrush="#FFC500" CaretBrush="#FFC500" HorizontalAlignment="Left" Width="86" Height="22" Cursor="Arrow" />
+
                 <TextBlock Text="Почта:" FontSize="12"/>
-                <TextBlock x:Name="profileEmail" Text="" FontSize="12" Margin="0 10 0 10"/>
-                <Button HorizontalAlignment="Left" Click="Button_EditingProfileWindow" HorizontalContentAlignment="Left" Content="Изменить" Style="{StaticResource MaterialDesignFlatButton}" Foreground="#FFC500" Cursor="Hand" Width="97"/>
+                <TextBox x:Name="textBoxNewEmail" materialDesign:HintAssist.Hint="Новый E-mail" SelectionBrush="#FFC500" CaretBrush="#FFC500" HorizontalAlignment="Left" Width="86" Height="22" Cursor="Arrow" />
+
+                <Button HorizontalAlignment="Left" Click="Button_SaveEditingProfileData" HorizontalContentAlignment="Left" Content="Сохранить изменения" Style="{StaticResource MaterialDesignFlatButton}" Foreground="#FFC500" Cursor="Hand" Width="189"/>
 
             </StackPanel>
         </Border>
     </Grid>
 </Window>
+
 

@@ -60,10 +60,14 @@ namespace Warehouse
                     mainWindow.Close();
                     WorkspaceWindow workspaceWindow = new WorkspaceWindow();
                     workspaceWindow.Show();
-                    File.WriteAllText("user.txt", "");
+
+                    User.WriteUserData(authUser);
+
+                    /*File.WriteAllText("user.txt", "");
                     File.AppendAllText("user.txt", authUser.Login);
                     File.AppendAllText("user.txt", "\n"+authUser.Password);
-                    File.AppendAllText("user.txt", "\n"+authUser.Email);
+                    File.AppendAllText("user.txt", "\n"+authUser.Email);*/
+
                     Close();
                 }
                 else

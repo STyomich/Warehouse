@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 
 namespace Warehouse
 {
@@ -30,6 +32,20 @@ namespace Warehouse
 
         public User() { }
 
+        public static void RegisterUser(string login, string email, string pass)
+        {
+            ApplicationContext db = new ApplicationContext();
+            User user = new User(login, email, pass);
+            db.Users.Add(user);
+            db.SaveChanges();
+        }
+        public static void WriteUserData(User authUser)
+        {
+            File.WriteAllText("user.txt", "");
+            File.AppendAllText("user.txt", authUser.Login);
+            File.AppendAllText("user.txt", "\n" + authUser.Password);
+            File.AppendAllText("user.txt", "\n" + authUser.Email);
+        }
         public User(string login, string email, string pass)
         {
             this.login = login;

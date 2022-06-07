@@ -34,7 +34,7 @@ namespace Warehouse
         {
             string name = textBoxName.Text;
             string unit = textBoxUnit.Text;
-            int price = Convert.ToInt32(textBoxPrice.Text);
+            int price = 0;
             Product newProduct = null;
             using (ApplicationContext db = new ApplicationContext())
             {
@@ -52,11 +52,6 @@ namespace Warehouse
                 textBoxName.ToolTip = "Это поле введено не коректно!";
                 textBoxName.Background = Brushes.DarkRed;
             }else
-            if (price < 0)
-            {
-                textBoxPrice.ToolTip = "Цена меньше действительной";
-                textBoxPrice.Background = Brushes.DarkRed;
-            }else
             if (unit == "")
             {
                 unit = "шт"; 
@@ -64,8 +59,6 @@ namespace Warehouse
             {
                 textBoxName.ToolTip = "";
                 textBoxName.Background = Brushes.Transparent;
-                textBoxPrice.ToolTip = "";
-                textBoxPrice.Background = Brushes.Transparent;
                 textBoxUnit.ToolTip = "";
                 textBoxUnit.Background = Brushes.Transparent;
                 string date_of_last_delivery = "X";

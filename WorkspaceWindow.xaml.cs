@@ -56,5 +56,29 @@ namespace Warehouse
             mainWindow.Show();
             Close();
         }
+
+        private void Button_Search(object sender, RoutedEventArgs e)
+        {
+            ApplicationContext db = new ApplicationContext();
+            List<Product> products = db.Products.ToList();
+            List<Product> searchProducts = new List<Product>();
+            for (int i = 0; i < products.Count; i++)
+            {
+                if (products[i].Name.ToLower().Contains(textBoxSearch.Text.ToLower()))
+                {
+                    searchProducts.Add(products[i]);
+                }
+            }
+            dataGrid.ItemsSource = null;
+            dataGrid.ItemsSource = searchProducts;
+            textBoxSearch.Text = "";
+        }
+
+        private void Button_EditingProduct(object sender, RoutedEventArgs e)
+        {
+            EditingProductWindow editingProductWindow = new EditingProductWindow();
+            editingProductWindow.Show();
+            Close();
+        }
     }
 }

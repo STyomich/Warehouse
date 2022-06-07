@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         
-        Title="Warehouse" Height="550" Width="450" WindowStyle="ThreeDBorderWindow">
+        Title="Warehouse" Height="450" Width="450" WindowStyle="ThreeDBorderWindow">
     <Grid Background="Khaki">
         <Border MinWidth="400" Margin="15" Background="white" VerticalAlignment="Center" Padding="30" MaxWidth="550" CornerRadius="10">
             <Border.Effect>
@@ -19,7 +19,6 @@
 
                 <TextBox x:Name="textBoxName" materialDesign:HintAssist.Hint="Введите название" SelectionBrush="#FFC500" CaretBrush="#FFC500" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Cursor="Arrow"/>
                 <TextBox x:Name="textBoxUnit" materialDesign:HintAssist.Hint="Единица измерения" SelectionBrush="#FFC500" CaretBrush="#FFC500" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Cursor="Arrow"/>
-                <TextBox x:Name="textBoxPrice" materialDesign:HintAssist.Hint="Цена за единицу" PreviewTextInput="textBoxPrice_PreviewTextInput" SelectionBrush="#FFC500" CaretBrush="#FFC500" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Cursor="Arrow"/>
                 <Button Content="Добавить товар" Click="Button_AddProduct" Margin="0 10" Background="#FFC500" BorderBrush="#FFC500" Cursor="Hand"/>
                 <Button Content="Вернуться"  Click="Button_ReturnToWorkspaceWindow" Margin="0 0 0 0" Style="{StaticResource MaterialDesignFlatButton}" Foreground="#FFC500" Cursor="Hand" HorizontalAlignment="Center" Width="350"/>
 

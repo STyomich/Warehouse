@@ -1,0 +1,29 @@
+﻿<Window x:Class="Warehouse.EditingProductWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Warehouse"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        
+        Title="Warehouse" Height="550" Width="450" WindowStyle="ThreeDBorderWindow">
+    <Grid Background="Khaki">
+        <Border MinWidth="400" Margin="15" Background="white" VerticalAlignment="Center" Padding="30" MaxWidth="550" CornerRadius="10">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="60" Color="LightGray" ShadowDepth="0"/>
+            </Border.Effect>
+            <StackPanel>
+                <TextBlock Text="Редактирование товара" FontSize="30" FontWeight="Bold" Margin="0 0 0 20" />
+                <TextBlock Text="Выберите товар" FontSize="12" Margin="0 0 0 20" />
+                <ComboBox x:Name="comboBoxSearchProduct" materialDesign:HintAssist.Hint="Товар"/>
+                <TextBox x:Name="textBoxName" materialDesign:HintAssist.Hint="Новое название" SelectionBrush="#FFC500" CaretBrush="#FFC500" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Cursor="Arrow"/>
+                <TextBox x:Name="textBoxUnit" materialDesign:HintAssist.Hint="Новая единица измерения" SelectionBrush="#FFC500" CaretBrush="#FFC500" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Cursor="Arrow"/>
+                <Button Content="Изменить товар" Click="Button_EditProduct" Margin="0 10" Background="#FFC500" BorderBrush="#FFC500" Cursor="Hand"/>
+                <Button Content="Удалить товар" Click="Button_DeleteProduct" Margin="0 5" Background="Red" BorderBrush="red" Cursor="Hand"/>
+                <Button Content="Вернуться"  Click="Button_ReturnToWorkspaceWindow" Margin="0 0 0 0" Style="{StaticResource MaterialDesignFlatButton}" Foreground="#FFC500" Cursor="Hand" HorizontalAlignment="Center" Width="350"/>
+
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>

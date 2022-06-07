@@ -79,9 +79,7 @@ namespace Warehouse
                     textBoxEmail.ToolTip = "";
                     textBoxEmail.Background = Brushes.Transparent;
 
-                    User user = new User(login, email, pass);
-                    db.Users.Add(user);
-                    db.SaveChanges();
+                    User.RegisterUser(login, email, pass);
 
                     AuthWindow authWindow = new AuthWindow();
                     authWindow.Show();

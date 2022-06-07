@@ -27,5 +27,12 @@ namespace Warehouse
             profilePass.Text = userData[1];
             profileEmail.Text = userData[2];
         }
+
+        private void Button_EditingProfileWindow(object sender, RoutedEventArgs e)
+        {
+            EditingProfileWindow editingProfileWindow = new EditingProfileWindow();
+            editingProfileWindow.Show();
+            Close();
+        }
     }
 }
