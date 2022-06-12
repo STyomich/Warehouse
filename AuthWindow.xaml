@@ -13,14 +13,14 @@
                 <DropShadowEffect BlurRadius="60" Color="LightGray" ShadowDepth="0"/>
             </Border.Effect>
             <StackPanel>
-                <TextBlock Text="Авторизация" FontSize="30" FontWeight="Bold" Margin="0 0 0 20" /> 
+                <TextBlock Text="Авторизація" FontSize="30" FontWeight="Bold" Margin="0 0 0 20" /> 
 
-                <TextBlock Text="Введите ваши данные" FontSize="12" Margin="0 0 0 20" />
+                <TextBlock Text="Введіть ваші данні:" FontSize="12" Margin="0 0 0 20" />
                 
-                <TextBox x:Name="textBoxLogin" materialDesign:HintAssist.Hint="Введите логин" SelectionBrush="#FFC500" CaretBrush="#FFC500" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Cursor="Arrow"/>
-                <PasswordBox x:Name="passBox" materialDesign:HintAssist.Hint="Введите пароль" SelectionBrush="#FFC500" CaretBrush="#FFC500" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" Cursor="Arrow"/>
-                <Button Content="Войти в рабочее пространство" Margin="0 20" Background="#FFC500" BorderBrush="#FFC500" Click="Button_Auth_Click" Cursor="Hand"/>
-                <Button HorizontalAlignment="Center" Content="Вернуться" Click="Button_Return"  Style="{StaticResource MaterialDesignFlatButton}" Foreground="#FFC500" Cursor="Hand" Width="360"/>
+                <TextBox x:Name="textBoxLogin" materialDesign:HintAssist.Hint="Введіть логін" SelectionBrush="#FFC500" CaretBrush="#FFC500" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Cursor="Arrow"/>
+                <PasswordBox x:Name="passBox" materialDesign:HintAssist.Hint="Введіть пароль" SelectionBrush="#FFC500" CaretBrush="#FFC500" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" Cursor="Arrow"/>
+                <Button Content="Увійти у рабочий простір" Margin="0 20" Background="#FFC500" BorderBrush="#FFC500" Click="Button_Auth_Click" Cursor="Hand"/>
+                <Button HorizontalAlignment="Center" Content="Повернутися" Click="Button_Return"  Style="{StaticResource MaterialDesignFlatButton}" Foreground="#FFC500" Cursor="Hand" Width="360"/>
             </StackPanel>
         </Border>
     </Grid>

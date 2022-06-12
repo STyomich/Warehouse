@@ -14,14 +14,14 @@
                 <DropShadowEffect BlurRadius="60" Color="LightGray" ShadowDepth="0"/>
             </Border.Effect>
             <StackPanel>
-                <TextBlock Text="Редактирование товара" FontSize="30" FontWeight="Bold" Margin="0 0 0 20" />
-                <TextBlock Text="Выберите товар" FontSize="12" Margin="0 0 0 20" />
+                <TextBlock Text="Редактування товару" FontSize="30" FontWeight="Bold" Margin="0 0 0 20" />
+                <TextBlock Text="Оберіть товар" FontSize="12" Margin="0 0 0 20" />
                 <ComboBox x:Name="comboBoxSearchProduct" materialDesign:HintAssist.Hint="Товар"/>
-                <TextBox x:Name="textBoxName" materialDesign:HintAssist.Hint="Новое название" SelectionBrush="#FFC500" CaretBrush="#FFC500" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Cursor="Arrow"/>
-                <TextBox x:Name="textBoxUnit" materialDesign:HintAssist.Hint="Новая единица измерения" SelectionBrush="#FFC500" CaretBrush="#FFC500" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Cursor="Arrow"/>
-                <Button Content="Изменить товар" Click="Button_EditProduct" Margin="0 10" Background="#FFC500" BorderBrush="#FFC500" Cursor="Hand"/>
-                <Button Content="Удалить товар" Click="Button_DeleteProduct" Margin="0 5" Background="Red" BorderBrush="red" Cursor="Hand"/>
-                <Button Content="Вернуться"  Click="Button_ReturnToWorkspaceWindow" Margin="0 0 0 0" Style="{StaticResource MaterialDesignFlatButton}" Foreground="#FFC500" Cursor="Hand" HorizontalAlignment="Center" Width="350"/>
+                <TextBox x:Name="textBoxName" materialDesign:HintAssist.Hint="Нова назва" SelectionBrush="#FFC500" CaretBrush="#FFC500" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Cursor="Arrow"/>
+                <TextBox x:Name="textBoxUnit" materialDesign:HintAssist.Hint="Новая одиниця виміру" SelectionBrush="#FFC500" CaretBrush="#FFC500" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Cursor="Arrow"/>
+                <Button Content="Змінити товар" Click="Button_EditProduct" Margin="0 10" Background="#FFC500" BorderBrush="#FFC500" Cursor="Hand"/>
+                <Button Content="Видалити товар" Click="Button_DeleteProduct" Margin="0 5" Background="Red" BorderBrush="red" Cursor="Hand"/>
+                <Button Content="Повернутися"  Click="Button_ReturnToWorkspaceWindow" Margin="0 0 0 0" Style="{StaticResource MaterialDesignFlatButton}" Foreground="#FFC500" Cursor="Hand" HorizontalAlignment="Center" Width="350"/>
 
             </StackPanel>
         </Border>

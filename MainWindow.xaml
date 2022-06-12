@@ -15,11 +15,11 @@
             </Border.Effect>
             <StackPanel>
                 <TextBlock Text="Warehouse" FontSize="30" FontWeight="Bold" Margin="0 0 0 20" />
-                <TextBlock Text="Выберите вариант что бы продолжить" FontSize="12" Margin="0 0 0 20" />
+                <TextBlock Text="Оберіть варіант щоб продовжити" FontSize="12" Margin="0 0 0 20" />
 
                 <Grid Margin="0 0 0 20">
-                    <Button HorizontalAlignment="Left" Content="Регистрация" Background="#FFC500" BorderBrush="#FFC500" Click="Button_Window_Reg_Click" Cursor="Hand"/>
-                    <Button HorizontalAlignment="Right" Content="Войти" Click="Button_Window_Auth_Click"  Style="{StaticResource MaterialDesignFlatButton}" Foreground="#FFC500" Cursor="Hand"/>
+                    <Button HorizontalAlignment="Left" Content="Регістрація" Background="#FFC500" BorderBrush="#FFC500" Click="Button_Window_Reg_Click" Cursor="Hand"/>
+                    <Button HorizontalAlignment="Right" Content="Увійти" Click="Button_Window_Auth_Click"  Style="{StaticResource MaterialDesignFlatButton}" Foreground="#FFC500" Cursor="Hand"/>
                 </Grid>
             </StackPanel>
         </Border>

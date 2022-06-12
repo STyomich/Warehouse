@@ -42,10 +42,10 @@ namespace Warehouse
                     newLogin = userData[0];
 
                 string newPass;
-                if (textBoxNewPass.Text == "")
+                if (textBoxNewPass.Password == "")
                     newPass = userData[1];
                 else
-                    newPass = textBoxNewPass.Text;
+                    newPass = textBoxNewPass.Password;
 
                 string newEmail;
                 if (textBoxNewEmail.Text == "")

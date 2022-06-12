@@ -13,16 +13,16 @@ xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                 <DropShadowEffect BlurRadius="60" Color="LightGray" ShadowDepth="0"/>
             </Border.Effect>
             <StackPanel>
-                <TextBlock Text="Профиль" FontSize="30" FontWeight="Bold" Margin="0 0 0 20" />
-                <TextBlock Text="Логин:" FontSize="12"/>
-                <TextBox x:Name="textBoxNewLogin" materialDesign:HintAssist.Hint="Новый логин" SelectionBrush="#FFC500" CaretBrush="#FFC500" HorizontalAlignment="Left" Width="86" Height="22" Cursor="Arrow" />
+                <TextBlock Text="Профіль" FontSize="30" FontWeight="Bold" Margin="0 0 0 20" />
+                <TextBlock Text="Логін:" FontSize="12"/>
+                <TextBox x:Name="textBoxNewLogin" materialDesign:HintAssist.Hint="Новий логін" SelectionBrush="#FFC500" CaretBrush="#FFC500" HorizontalAlignment="Left" Width="86" Height="22" Cursor="Arrow" />
                 <TextBlock Text="Пароль:" FontSize="12"/>
-                <TextBox x:Name="textBoxNewPass" materialDesign:HintAssist.Hint="Новый пароль" SelectionBrush="#FFC500" CaretBrush="#FFC500" HorizontalAlignment="Left" Width="86" Height="22" Cursor="Arrow" />
+                <PasswordBox x:Name="textBoxNewPass" materialDesign:HintAssist.Hint="Новий пароль" SelectionBrush="#FFC500" CaretBrush="#FFC500" HorizontalAlignment="Left" Width="86" Height="22" Cursor="Arrow" />
 
                 <TextBlock Text="Почта:" FontSize="12"/>
-                <TextBox x:Name="textBoxNewEmail" materialDesign:HintAssist.Hint="Новый E-mail" SelectionBrush="#FFC500" CaretBrush="#FFC500" HorizontalAlignment="Left" Width="86" Height="22" Cursor="Arrow" />
+                <TextBox x:Name="textBoxNewEmail" materialDesign:HintAssist.Hint="Новий E-mail" SelectionBrush="#FFC500" CaretBrush="#FFC500" HorizontalAlignment="Left" Width="86" Height="22" Cursor="Arrow" />
 
-                <Button HorizontalAlignment="Left" Click="Button_SaveEditingProfileData" HorizontalContentAlignment="Left" Content="Сохранить изменения" Style="{StaticResource MaterialDesignFlatButton}" Foreground="#FFC500" Cursor="Hand" Width="189"/>
+                <Button HorizontalAlignment="Left" Click="Button_SaveEditingProfileData" HorizontalContentAlignment="Left" Content="Зберегти зміни" Style="{StaticResource MaterialDesignFlatButton}" Foreground="#FFC500" Cursor="Hand" Width="189"/>
 
             </StackPanel>
         </Border>

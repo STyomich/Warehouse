@@ -13,12 +13,12 @@ xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                 <DropShadowEffect BlurRadius="60" Color="LightGray" ShadowDepth="0"/>
             </Border.Effect>
             <StackPanel>
-                <TextBlock Text="Профиль" FontSize="30" FontWeight="Bold" Margin="0 0 0 20" />
-                <TextBlock Text="Логин:" FontSize="12"/>
+                <TextBlock Text="Профіль" FontSize="30" FontWeight="Bold" Margin="0 0 0 20" />
+                <TextBlock Text="Логін:" FontSize="12"/>
                 <TextBlock x:Name="profileLogin" Text="" FontSize="12" Margin="0 10 0 10" />
                 <TextBlock Text="Пароль:" FontSize="12"/>
                 <TextBlock x:Name="profilePass" Text="" FontSize="12" Margin="0 10 0 10"/>
-                <TextBlock Text="Почта:" FontSize="12"/>
+                <TextBlock Text="Пошта:" FontSize="12"/>
                 <TextBlock x:Name="profileEmail" Text="" FontSize="12" Margin="0 10 0 10"/>
                 <Button HorizontalAlignment="Left" Click="Button_EditingProfileWindow" HorizontalContentAlignment="Left" Content="Изменить" Style="{StaticResource MaterialDesignFlatButton}" Foreground="#FFC500" Cursor="Hand" Width="97"/>
 

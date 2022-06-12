@@ -58,6 +58,10 @@ namespace Warehouse
         {
             ApplicationContext db = new ApplicationContext();
 
+            bool shipmentProducts = false;
+
+            bool arrivalProducts = false;
+
             for (int i = 0; i < productPresentList.Count; i++)
             {
                 Product addedProduct = null;
@@ -67,6 +71,12 @@ namespace Warehouse
                 {
                     addedProduct = db.Products.Find(addedProduct.id);
                     addedProduct.amount += productPresentList[i].amount;
+
+                    if (productPresentList[i].amount < 0)
+                        shipmentProducts = true;
+                    if (productPresentList[i].amount > 0)
+                        arrivalProducts = true;
+
                     if (productPresentList[i].amount > 0)
                     {
                         addedProduct.Date_of_last_delivery = DateTime.Today.ToShortDateString();
@@ -79,37 +89,54 @@ namespace Warehouse
             }
             SaveFileDialog dlg = new SaveFileDialog();
             dlg.Filter = "Текстовый файл (*.txt)|*.txt";
-            if (dlg.ShowDialog() == true)
+
+            if (shipmentProducts == true)
             {
-                int sumShipment = 0;
-                int sumArrival = 0;
-                File.AppendAllText(dlg.FileName, "--НАКЛАДНАЯ--");
-                File.AppendAllText(dlg.FileName, "\nТовары на отправку:");
-                for (int i = 0; i < productPresentList.Count; i++)
+                MessageBox.Show("Формирование расходной накладной.");
+                if (dlg.ShowDialog() == true)
                 {
-                    if (productPresentList[i].amount < 0)
+                    int sumShipment = 0;
+                    File.AppendAllText(dlg.FileName, "--РАСХОДНАЯ НАКЛАДНАЯ--");
+                    File.AppendAllText(dlg.FileName, "\nТовары на отправку:");
+                    for (int i = 0; i < productPresentList.Count; i++)
                     {
-                        File.AppendAllText(dlg.FileName, "\n | " + productPresentList[i].name + " в количестве " + -productPresentList[i].amount + " " + productPresentList[i].unit + ".");
-                        sumShipment += productPresentList[i].amount * productPresentList[i].price;
+                        if (productPresentList[i].amount < 0)
+                        {
+                            File.AppendAllText(dlg.FileName, "\n | " + productPresentList[i].name + " в количестве " + -productPresentList[i].amount + " " + productPresentList[i].unit + ".");
+                            sumShipment += productPresentList[i].amount * productPresentList[i].price;
+                        }
                     }
+                    File.AppendAllText(dlg.FileName, "\nОбщая стоимость продажи: " + -sumShipment + " грн.");
+
+                    File.AppendAllText(dlg.FileName, "\n-----------");
+                    string[] userData = File.ReadAllLines("user.txt");
+                    File.AppendAllText(dlg.FileName, "\nРабочий на смене: " + userData[0]);
+                    File.AppendAllText(dlg.FileName, "\nE-mail: " + userData[2]);
                 }
-                File.AppendAllText(dlg.FileName, "\nОбщая стоимость продажи: " + -sumShipment + " грн.");
-                File.AppendAllText(dlg.FileName, "\n-----------");
-                File.AppendAllText(dlg.FileName, "\nТовары на получение:");
-                for (int i = 0; i < productPresentList.Count; i++)
+            }
+            if (arrivalProducts == true)
+            {
+                MessageBox.Show("Формирование прибыльной накладной.");
+                if (dlg.ShowDialog() == true)
                 {
-                    if (productPresentList[i].amount > 0)
+                    int sumArrival = 0;
+                    File.AppendAllText(dlg.FileName, "--ПРИБЫЛЬНАЯ НАКЛАДНАЯ--");
+                    File.AppendAllText(dlg.FileName, "\nТовары на получение:");
+                    for (int i = 0; i < productPresentList.Count; i++)
                     {
-                        File.AppendAllText(dlg.FileName, "\n | " + productPresentList[i].name + " в количестве " + productPresentList[i].amount + " " + productPresentList[i].unit + ".");
-                        sumArrival += productPresentList[i].amount * productPresentList[i].price;
+                        if (productPresentList[i].amount > 0)
+                        {
+                            File.AppendAllText(dlg.FileName, "\n | " + productPresentList[i].name + " в количестве " + productPresentList[i].amount + " " + productPresentList[i].unit + ".");
+                            sumArrival += productPresentList[i].amount * productPresentList[i].price;
+                        }
                     }
+                    File.AppendAllText(dlg.FileName, "\nОбщая стоимость покупки: " + sumArrival + " грн.");
+
+                    File.AppendAllText(dlg.FileName, "\n-----------");
+                    string[] userData = File.ReadAllLines("user.txt");
+                    File.AppendAllText(dlg.FileName, "\nРабочий на смене: " + userData[0]);
+                    File.AppendAllText(dlg.FileName, "\nE-mail: " + userData[2]);
                 }
-                File.AppendAllText(dlg.FileName, "\nОбщая стоимость покупки: " + sumArrival + " грн.");
-                File.AppendAllText(dlg.FileName, "\n-----------");
-                string[] userData = File.ReadAllLines("user.txt");
-                File.AppendAllText(dlg.FileName, "\nРабочий на смене: " + userData[0]);
-                File.AppendAllText(dlg.FileName, "\nE-mail: " + userData[2]);
-                MessageBox.Show("Done");
             }
         }
         public static void AddInList(ref List<Product> productList, string name, int amount, int price, RadioButton radioButtonArrival, RadioButton radioButtonShipment)

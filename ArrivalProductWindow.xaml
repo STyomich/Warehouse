@@ -13,30 +13,30 @@
                 <DropShadowEffect BlurRadius="60" Color="LightGray" ShadowDepth="0"/>
             </Border.Effect>
             <StackPanel Margin="0,0,15,0">
-                <TextBlock Text="Прибытие и отправка" FontSize="30" FontWeight="Bold" Margin="0 0 0 20" />
+                <TextBlock Text="Прибуття та відправка" FontSize="30" FontWeight="Bold" Margin="0 0 0 20" />
 
-                <TextBlock Text="Выберите вариант и введите данные" FontSize="12" Margin="0 0 0 10" />
-                <RadioButton x:Name="radioButtonArrival" GroupName="choices" Content="Прибытие" Height="26" Width="94" HorizontalAlignment="Left"/>
-                <RadioButton x:Name="radioButtonShipment" GroupName="choices" Content="Отправка" Height="26" Width="94" HorizontalAlignment="Left"/>
+                <TextBlock Text="Оберіть варінт та данні:" FontSize="12" Margin="0 0 0 10" />
+                <RadioButton x:Name="radioButtonArrival" GroupName="choices" Content="Прибуття" Height="26" Width="94" HorizontalAlignment="Left"/>
+                <RadioButton x:Name="radioButtonShipment" GroupName="choices" Content="Відправка" Height="26" Width="94" HorizontalAlignment="Left"/>
                 <TextBlock Text="Название товара:" />
                 <ComboBox x:Name="comboBoxSearchProduct" materialDesign:HintAssist.Hint="Товар"/>
-                <TextBlock Text="Количество товара:" />
-                <TextBox x:Name="textBoxAmount" PreviewTextInput="textBoxAmount_PreviewTextInput" materialDesign:HintAssist.Hint="Количество" SelectionBrush="#FFC500" CaretBrush="#FFC500" HorizontalAlignment="Left" Width="86" Height="22" Cursor="Arrow"/>
-                <TextBlock Text="Цена товара:" />
-                <TextBox x:Name="textBoxPrice" PreviewTextInput="textBoxAmount_PreviewTextInput" materialDesign:HintAssist.Hint="Цена" SelectionBrush="#FFC500" CaretBrush="#FFC500" HorizontalAlignment="Left" Width="86" Height="22"/>
+                <TextBlock Text="Кількість товару:" />
+                <TextBox x:Name="textBoxAmount" PreviewTextInput="textBoxAmount_PreviewTextInput" materialDesign:HintAssist.Hint="Кількість" SelectionBrush="#FFC500" CaretBrush="#FFC500" HorizontalAlignment="Left" Width="86" Height="22" Cursor="Arrow"/>
+                <TextBlock Text="Ціна товару:" />
+                <TextBox x:Name="textBoxPrice" PreviewTextInput="textBoxAmount_PreviewTextInput" materialDesign:HintAssist.Hint="Ціна товару" SelectionBrush="#FFC500" CaretBrush="#FFC500" HorizontalAlignment="Left" Width="86" Height="22"/>
 
-                <Button Content="Вернуться"  Click="Button_ReturnOnWorkspaceWindow" Margin="10 10 0 0" Style="{StaticResource MaterialDesignFlatButton}" Foreground="#FFC500" Cursor="Hand" HorizontalAlignment="Left" Width="210"/>
+                <Button Content="Повернутися"  Click="Button_ReturnOnWorkspaceWindow" Margin="10 10 0 0" Style="{StaticResource MaterialDesignFlatButton}" Foreground="#FFC500" Cursor="Hand" HorizontalAlignment="Left" Width="210"/>
 
-                <Button Content="Добавить"  Click="Button_AddInList" Margin="10 10 0 0" Style="{StaticResource MaterialDesignFlatButton}" Foreground="#FFC500" Cursor="Hand" HorizontalAlignment="Left" Width="210"/>
-                <Button Content="Сформировать накладную" Click="Button_generateList" Margin="10" Background="#FFC500" BorderBrush="#FFC500"  HorizontalAlignment="Left" Width="210" Cursor="Hand"/>
+                <Button Content="Додати"  Click="Button_AddInList" Margin="10 10 0 0" Style="{StaticResource MaterialDesignFlatButton}" Foreground="#FFC500" Cursor="Hand" HorizontalAlignment="Left" Width="210"/>
+                <Button Content="Сформувати накладну" Click="Button_generateList" Margin="10" Background="#FFC500" BorderBrush="#FFC500"  HorizontalAlignment="Left" Width="210" Cursor="Hand"/>
             </StackPanel>
         </Border>
         <StackPanel Margin="420,0,0,0">
             <TextBlock Text="Список" FontSize="40" FontWeight="Bold" Margin="20 45 40 20" FontFamily="Segoe UI"/>
             <DataGrid x:Name="dataGrid" AutoGenerateColumns="False" Width="280" Height="380">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Название" Binding="{Binding Path=Name}"/>
-                    <DataGridTextColumn Header="Кол-во" Binding="{Binding Path=Amount}"/>
+                    <DataGridTextColumn Header="Назва" Binding="{Binding Path=Name}"/>
+                    <DataGridTextColumn Header="Кількість" Binding="{Binding Path=Amount}"/>
                 </DataGrid.Columns>
             </DataGrid>
         </StackPanel>
