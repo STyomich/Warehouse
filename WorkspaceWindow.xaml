@@ -24,8 +24,8 @@
         </Border>
         <StackPanel Margin="320,0,0,0">
             <TextBlock Text="Товари" FontSize="40" FontWeight="Bold" Margin="40" FontFamily="Segoe UI"/>
-            <TextBox x:Name="textBoxSearch" materialDesign:HintAssist.Hint="Поиск товара" SelectionBrush="#FFC500" Margin="30 0 0 10" CaretBrush="#FFC500" HorizontalAlignment="Left" Height="22" Width="278" Cursor="Arrow"/>
-            <Button HorizontalAlignment="Left" Content="Поиск" Background="#FFC500" BorderBrush="#FFC500" Margin="30 0 0 10" Click="Button_Search" Cursor="Hand"/>
+            <TextBox x:Name="textBoxSearch" materialDesign:HintAssist.Hint="Пошук товару" SelectionBrush="#FFC500" Margin="30 0 0 10" CaretBrush="#FFC500" HorizontalAlignment="Left" Height="22" Width="278" Cursor="Arrow"/>
+            <Button HorizontalAlignment="Left" Content="Пошук" Background="#FFC500" BorderBrush="#FFC500" Margin="30 0 0 10" Click="Button_Search" Cursor="Hand"/>
             <DataGrid x:Name="dataGrid" AutoGenerateColumns="False" Width="480" Height="341">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="№" Binding="{Binding Path=id}"/>
