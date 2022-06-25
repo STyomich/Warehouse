@@ -25,7 +25,6 @@ namespace Warehouse
         {
             InitializeComponent();
 
-            db = new ApplicationContext();
         }
 
         private void Button_Reg_Click(object sender, RoutedEventArgs e)
@@ -42,30 +41,30 @@ namespace Warehouse
             }
             if (regUser != null)
             {
-                textBoxLogin.ToolTip = "Данный логин занят.";
+                textBoxLogin.ToolTip = "Даний логін зайнятий.";
                 textBoxLogin.Background = Brushes.DarkRed;
-                MessageBox.Show("Данный логин занят.");
+                MessageBox.Show("Даний логін зайнятий.");
             }
             else
             {
                 if (login.Length < 5)
                 {
-                    textBoxLogin.ToolTip = "Логин должен быть длиннее 4 символов!";
+                    textBoxLogin.ToolTip = "Логін повинен бути довше 4 символвв!";
                     textBoxLogin.Background = Brushes.DarkRed;
                 }
                 else if (pass.Length < 5)
                 {
-                    passBox.ToolTip = "Пароль должен быть длиннее 4 символов!";
+                    passBox.ToolTip = "Пароль повинен бути довше 4 символів!";
                     passBox.Background = Brushes.DarkRed;
                 }
                 else if (pass2 != pass)
                 {
-                    passBox2.ToolTip = "Пароли не совпадают!";
+                    passBox2.ToolTip = "Паролі не співпадают!";
                     passBox2.Background = Brushes.DarkRed;
                 }
                 else if (email.Length < 8 || !email.Contains("@") || !email.Contains("."))
                 {
-                    textBoxEmail.ToolTip = "Это поле введено не коректно! Логин длиннее 7 символов, наличие @ и . ";
+                    textBoxEmail.ToolTip = "Це поле введено некоректно! Назва скрині довше 7 символов, наявність @ и . ";
                     textBoxEmail.Background = Brushes.DarkRed;
                 }
                 else

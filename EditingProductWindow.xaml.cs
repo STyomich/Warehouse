@@ -41,7 +41,7 @@ namespace Warehouse
         {
             if (comboBoxSearchProduct.SelectedItem == null)
             {
-                MessageBox.Show("Выберите товар для редактирования.");
+                MessageBox.Show("Оберіть товар для редагування.");
             }
             else
             {
@@ -66,7 +66,7 @@ namespace Warehouse
         {
             if (comboBoxSearchProduct.SelectedItem == null)
             {
-                MessageBox.Show("Выберите товар для редактирования.");
+                MessageBox.Show("Оберіть товар для редавгування.");
             }
             else
             {

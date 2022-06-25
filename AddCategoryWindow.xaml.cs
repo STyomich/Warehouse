@@ -26,8 +26,6 @@ namespace Warehouse
         public AddCategoryWindow()
         {
             InitializeComponent();
-
-            db = new ApplicationContext();
         }
 
         private void Button_AddProduct(object sender, RoutedEventArgs e)
@@ -42,14 +40,14 @@ namespace Warehouse
             }
             if (newProduct != null)
             {
-                textBoxName.ToolTip = "Данный товар уже существует.";
+                textBoxName.ToolTip = "Даний товар вже існує.";
                 textBoxName.Background = Brushes.DarkRed;
-                MessageBox.Show("Данный товар уже существует.");
+                MessageBox.Show("Даный товар вже існує.");
             }
             else
             if (name.Length < 1)
             {
-                textBoxName.ToolTip = "Это поле введено не коректно!";
+                textBoxName.ToolTip = "Це поле введено некоректно!";
                 textBoxName.Background = Brushes.DarkRed;
             }else
             if (unit == "")

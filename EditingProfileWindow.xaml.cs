@@ -32,7 +32,7 @@ namespace Warehouse
             user = db.Users.Where(b => b.Login.ToLower() == textBoxNewLogin.Text.ToLower()).FirstOrDefault();
             if (user != null)
             {
-                MessageBox.Show("Данный логин занят!");
+                MessageBox.Show("Даний логін зайнятий!");
             }
             else
             {

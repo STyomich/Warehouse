@@ -85,56 +85,56 @@ namespace Warehouse
                     db.SaveChanges();
                 }
                 else
-                    MessageBox.Show("Ошибка! Такого продукта нет в списке, добавьте его на главном экране.");
+                    MessageBox.Show("Помилка! Такого продукту нема у списку, додайте його у вікні додавання.");
             }
             SaveFileDialog dlg = new SaveFileDialog();
-            dlg.Filter = "Текстовый файл (*.txt)|*.txt";
+            dlg.Filter = "Текстовий файл (*.txt)|*.txt";
 
             if (shipmentProducts == true)
             {
-                MessageBox.Show("Формирование расходной накладной.");
+                MessageBox.Show("Формування видаткової накладної.");
                 if (dlg.ShowDialog() == true)
                 {
                     int sumShipment = 0;
-                    File.AppendAllText(dlg.FileName, "--РАСХОДНАЯ НАКЛАДНАЯ--");
-                    File.AppendAllText(dlg.FileName, "\nТовары на отправку:");
+                    File.AppendAllText(dlg.FileName, "--ВИДАТКОВА НАКЛАДНА--");
+                    File.AppendAllText(dlg.FileName, "\nТовари на відправку:");
                     for (int i = 0; i < productPresentList.Count; i++)
                     {
                         if (productPresentList[i].amount < 0)
                         {
-                            File.AppendAllText(dlg.FileName, "\n | " + productPresentList[i].name + " в количестве " + -productPresentList[i].amount + " " + productPresentList[i].unit + ".");
+                            File.AppendAllText(dlg.FileName, "\n | " + productPresentList[i].name + " у кількості " + -productPresentList[i].amount + " " + productPresentList[i].unit + ".");
                             sumShipment += productPresentList[i].amount * productPresentList[i].price;
                         }
                     }
-                    File.AppendAllText(dlg.FileName, "\nОбщая стоимость продажи: " + -sumShipment + " грн.");
+                    File.AppendAllText(dlg.FileName, "\nЗагальна вартість продажу: " + -sumShipment + " грн.");
 
                     File.AppendAllText(dlg.FileName, "\n-----------");
                     string[] userData = File.ReadAllLines("user.txt");
-                    File.AppendAllText(dlg.FileName, "\nРабочий на смене: " + userData[0]);
+                    File.AppendAllText(dlg.FileName, "\nРобітник на зміні: " + userData[0]);
                     File.AppendAllText(dlg.FileName, "\nE-mail: " + userData[2]);
                 }
             }
             if (arrivalProducts == true)
             {
-                MessageBox.Show("Формирование прибыльной накладной.");
+                MessageBox.Show("Формування прибуткової накладної.");
                 if (dlg.ShowDialog() == true)
                 {
                     int sumArrival = 0;
-                    File.AppendAllText(dlg.FileName, "--ПРИБЫЛЬНАЯ НАКЛАДНАЯ--");
-                    File.AppendAllText(dlg.FileName, "\nТовары на получение:");
+                    File.AppendAllText(dlg.FileName, "--ПРИБУТКОВА НАКЛАДНА--");
+                    File.AppendAllText(dlg.FileName, "\nТовари на отримання:");
                     for (int i = 0; i < productPresentList.Count; i++)
                     {
                         if (productPresentList[i].amount > 0)
                         {
-                            File.AppendAllText(dlg.FileName, "\n | " + productPresentList[i].name + " в количестве " + productPresentList[i].amount + " " + productPresentList[i].unit + ".");
+                            File.AppendAllText(dlg.FileName, "\n | " + productPresentList[i].name + " у кількості " + productPresentList[i].amount + " " + productPresentList[i].unit + ".");
                             sumArrival += productPresentList[i].amount * productPresentList[i].price;
                         }
                     }
-                    File.AppendAllText(dlg.FileName, "\nОбщая стоимость покупки: " + sumArrival + " грн.");
+                    File.AppendAllText(dlg.FileName, "\nЗагальна вартість покупки: " + sumArrival + " грн.");
 
                     File.AppendAllText(dlg.FileName, "\n-----------");
                     string[] userData = File.ReadAllLines("user.txt");
-                    File.AppendAllText(dlg.FileName, "\nРабочий на смене: " + userData[0]);
+                    File.AppendAllText(dlg.FileName, "\nРобітник на зміні: " + userData[0]);
                     File.AppendAllText(dlg.FileName, "\nE-mail: " + userData[2]);
                 }
             }
@@ -164,7 +164,7 @@ namespace Warehouse
                                 checkProduct = db.Products.Where(b => b.Name.ToLower() == name.ToLower()).FirstOrDefault();
                             }
                             if (checkProduct.Amount - amount < 0)
-                                MessageBox.Show("Ошибка! Количество отправленного товара превышает количество в имении.");
+                                MessageBox.Show("Помилка! Кількість відправленого товару первіщує кількість у маєтку.");
                             else
                             {
                                 productList[i].amount = -amount;
@@ -190,7 +190,7 @@ namespace Warehouse
                     if (amount > 0)
                         product.Date_of_last_delivery = DateTime.Today.ToShortDateString();
                     if (checkProduct.Amount + product.Amount < 0)
-                        MessageBox.Show("Ошибка! Количество отправленного товара превышает количество в имении.");
+                        MessageBox.Show("Помилка! Кількість відправленого товару первіщує кількість у маєтку.");
                     else
                     {
                         checkProduct.Price = product.Price;
@@ -198,7 +198,7 @@ namespace Warehouse
                     }
                 }
                 else
-                    MessageBox.Show("Данного товара не существует. Добавьте его на главном экране.");
+                    MessageBox.Show("Даного товару немає. Додати його на головному екрані.");
             }
         }
         public Product(string name, string unit, int price, string date_of_last_delivery, int amount)

@@ -83,7 +83,7 @@ namespace Warehouse
         {
             if (dataGrid.ItemsSource == null)
             {
-                MessageBox.Show("Список товаров пуст. Добавьте хотя бы один товар.");
+                MessageBox.Show("Лист товарів пуст. Додайте хоча б один товар.");
             }
             else
             {

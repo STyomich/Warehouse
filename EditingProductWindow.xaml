@@ -14,7 +14,7 @@
                 <DropShadowEffect BlurRadius="60" Color="LightGray" ShadowDepth="0"/>
             </Border.Effect>
             <StackPanel>
-                <TextBlock Text="Редактування товару" FontSize="30" FontWeight="Bold" Margin="0 0 0 20" />
+                <TextBlock Text="Редагування товару" FontSize="30" FontWeight="Bold" Margin="0 0 0 20" />
                 <TextBlock Text="Оберіть товар" FontSize="12" Margin="0 0 0 20" />
                 <ComboBox x:Name="comboBoxSearchProduct" materialDesign:HintAssist.Hint="Товар"/>
                 <TextBox x:Name="textBoxName" materialDesign:HintAssist.Hint="Нова назва" SelectionBrush="#FFC500" CaretBrush="#FFC500" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Cursor="Arrow"/>

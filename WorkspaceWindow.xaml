@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         
-        Title="Warehouse" Height="600" Width="850">
+        Title="Warehouse" Height="600" Width="900">
     <Grid Background="Khaki">
         <Border MinWidth="200" Margin="15" Background="white" HorizontalAlignment="Left" Padding="30" MaxWidth="550" CornerRadius="10">
             <Border.Effect>
@@ -17,7 +17,7 @@
                 <TextBlock Text="Warehouse" FontSize="40" FontWeight="Bold" Margin="0 0 0 20" />
                 <Button HorizontalAlignment="Center" Click="Button_Profile" HorizontalContentAlignment="Left" Content="Профіль" Style="{StaticResource MaterialDesignFlatButton}" Foreground="#FFC500" Cursor="Hand" Width="211"/>
                 <Button HorizontalAlignment="Center" Click="Button_AddCategory" HorizontalContentAlignment="Left" Content="Додати категорію" Style="{StaticResource MaterialDesignFlatButton}" Foreground="#FFC500" Cursor="Hand" Width="211"/>
-                <Button HorizontalAlignment="Center" Click="Button_EditingProduct" HorizontalContentAlignment="Left" Content="Редактування" Style="{StaticResource MaterialDesignFlatButton}" Foreground="#FFC500" Cursor="Hand" Width="211"/>
+                <Button HorizontalAlignment="Center" Click="Button_EditingProduct" HorizontalContentAlignment="Left" Content="Редагування" Style="{StaticResource MaterialDesignFlatButton}" Foreground="#FFC500" Cursor="Hand" Width="211"/>
                 <Button HorizontalAlignment="Center" Click="Button_ArrivalProduct" HorizontalContentAlignment="Left" Content="Прибуття/відправка" Style="{StaticResource MaterialDesignFlatButton}" Foreground="#FFC500" Cursor="Hand" Width="211"/>
                 <Button HorizontalAlignment="Center" Click="Button_Exit" HorizontalContentAlignment="Left" Content="Вийти" Style="{StaticResource MaterialDesignFlatButton}" Foreground="#FFC500" Cursor="Hand" Width="211"/>
             </StackPanel>
@@ -26,7 +26,7 @@
             <TextBlock Text="Товари" FontSize="40" FontWeight="Bold" Margin="40" FontFamily="Segoe UI"/>
             <TextBox x:Name="textBoxSearch" materialDesign:HintAssist.Hint="Пошук товару" SelectionBrush="#FFC500" Margin="30 0 0 10" CaretBrush="#FFC500" HorizontalAlignment="Left" Height="22" Width="278" Cursor="Arrow"/>
             <Button HorizontalAlignment="Left" Content="Пошук" Background="#FFC500" BorderBrush="#FFC500" Margin="30 0 0 10" Click="Button_Search" Cursor="Hand"/>
-            <DataGrid x:Name="dataGrid" AutoGenerateColumns="False" Width="480" Height="341">
+            <DataGrid x:Name="dataGrid" AutoGenerateColumns="False" Width="517" Height="341">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="№" Binding="{Binding Path=id}"/>
                     <DataGridTextColumn Header="Назва" Binding="{Binding Path=Name}"/>

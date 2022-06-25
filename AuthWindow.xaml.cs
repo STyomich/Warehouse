@@ -32,12 +32,12 @@ namespace Warehouse
 
             if (login.Length < 5)
             {
-                textBoxLogin.ToolTip = "Это поле введено не коректно!";
+                textBoxLogin.ToolTip = "Це поле введено некоректно!";
                 textBoxLogin.Background = Brushes.DarkRed;
             }
             else if (pass.Length < 5)
             {
-                passBox.ToolTip = "Это поле введено не коректно!";
+                passBox.ToolTip = "Це поле введено некоректно!";
                 passBox.Background = Brushes.DarkRed;
             } else
             {
@@ -63,15 +63,10 @@ namespace Warehouse
 
                     User.WriteUserData(authUser);
 
-                    /*File.WriteAllText("user.txt", "");
-                    File.AppendAllText("user.txt", authUser.Login);
-                    File.AppendAllText("user.txt", "\n"+authUser.Password);
-                    File.AppendAllText("user.txt", "\n"+authUser.Email);*/
-
                     Close();
                 }
                 else
-                    MessageBox.Show("Ошибка! Введены неверные данные.");
+                    MessageBox.Show("Помилка! Введені невірні дані.");
             }
         }
 
